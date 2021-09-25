@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Calendar/Calendar.iml" filepath="$PROJECT_DIR$/Calendar/Calendar.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gugudan/Gugudan.iml" filepath="$PROJECT_DIR$/Gugudan/Gugudan.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java-Playground.iml" filepath="$PROJECT_DIR$/Java-Playground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThisIsJava/ThisIsJava.iml" filepath="$PROJECT_DIR$/ThisIsJava/ThisIsJava.iml" />
     </modules>
   </component>
 </project>
