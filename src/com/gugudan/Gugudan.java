@@ -1,3 +1,5 @@
+package com.gugudan;
+
 public class Gugudan {
     public static int[] saveInArray(int num1, int num2){
         int[] result = new int[num2];
