@@ -1,9 +1,12 @@
 package com.calendar;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Calendar {
     private static final String PROMPT = "> ";
+    public static final String today = LocalDate.now().format(DateTimeFormatter.ISO_DATE);
 
     //Step 2. 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
     public static void step2(Scanner scanner) {
@@ -13,7 +16,7 @@ public class Calendar {
         if (month < 1 || month > 12) {
             System.out.println("1월부터 12월 사이의 월을 입력해주세요.");
         } else {
-            System.out.printf("%d월은 %d까지 있습니다.", month, MonthList.getLastDay(2021,month - 1));
+            System.out.printf("%d월은 %d까지 있습니다.", month, MonthList.getMaxDay(2021,month - 1));
         }
     }
 
@@ -28,7 +31,7 @@ public class Calendar {
             months[i] = month;
         }
         for (int i = 0; i < months.length; i++) {
-            System.out.printf("%d월은 %d일까지 있습니다.\n", months[i], MonthList.getLastDay(2021,months[i]));
+            System.out.printf("%d월은 %d일까지 있습니다.\n", months[i], MonthList.getMaxDay(2021,months[i]));
         }
 
     }
@@ -43,7 +46,7 @@ public class Calendar {
                 System.out.println("Have a nice day!");
                 break;
             } else {
-                System.out.printf("%d월은 %d일까지 있습니다. \n", inputMonth, MonthList.getLastDay(2021,inputMonth));
+                System.out.printf("%d월은 %d일까지 있습니다. \n", inputMonth, MonthList.getMaxDay(2021,inputMonth));
             }
         }
 
@@ -103,17 +106,4 @@ public class Calendar {
         MonthList.printMonth(year,month);
 
     }
-    public static void main(String[] args) {
-        //Step 1. 달력을 출력해라
-
-        Scanner scanner = new Scanner(System.in);
-
-//        step2(scanner);
-//        step3(scanner);
-//        step4(scanner);
-//        step5(scanner);
-//        step6(scanner);
-        step7(scanner);
-    }
-
 }

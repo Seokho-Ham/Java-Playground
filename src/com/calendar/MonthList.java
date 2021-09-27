@@ -5,7 +5,7 @@ public class MonthList {
     private static final int[] MONTH_LIST = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private static final int[] LEAPYEAR_MONTH_LIST = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    public static int getLastDay(int year, int month) {
+    public static int getMaxDay(int year, int month) {
         if (checkLeapYear(year)) {
             return LEAPYEAR_MONTH_LIST[month - 1];
         }
@@ -15,7 +15,7 @@ public class MonthList {
     ;
 
     public static void printMonth(int year, int month) {
-        System.out.printf("<<%4d %3d>>\n", year, month);
+        System.out.printf("<<%4d년 %3d월>>\n", year, month);
         System.out.println(" SUN MON TUE WED THU FRI SAT");
         System.out.println("----------------------------");
         int day = calculateStartDay(year)-1;
@@ -24,7 +24,7 @@ public class MonthList {
         for (int i = 0; i < day; i++) {
             System.out.print("    ");
         }
-        for (int i = 1; i <= getLastDay(year, month); i++) {
+        for (int i = 1; i <= getMaxDay(year, month); i++) {
             System.out.printf("%4d", i);
             if (i % 7 == endDate) {
                 System.out.println();
@@ -33,7 +33,7 @@ public class MonthList {
     }
 
     public static void printMonth(int year, int month, int day) {
-        System.out.printf("<<%4d %3d>>\n", year, month);
+        System.out.printf("<<%4d년 %3d월>>\n", year, month);
         System.out.println(" SUN MON TUE WED THU FRI SAT");
         System.out.println("----------------------------");
         int startDate = 7 - day;
@@ -41,7 +41,7 @@ public class MonthList {
         for (int i = 0; i < day; i++) {
             System.out.print("    ");
         }
-        for (int i = 1; i <= getLastDay(year, month); i++) {
+        for (int i = 1; i <= getMaxDay(year, month); i++) {
             System.out.printf("%4d", i);
             if (i % 7 == endDate) {
                 System.out.println();
